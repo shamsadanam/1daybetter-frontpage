@@ -1,81 +1,129 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import CatSlider from "../components/CatSlider.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout>
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="ly-hero">
+        <div class="overlay">&nbsp;</div>
+        <div class="ly-hero__inner">
+          <h1>
+            <span>Crowdcuring</span>
+            <br />
+            <span class="tag">Academy</span>
+          </h1>
+          <a href="/"> Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <CatSlider />
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+<style is:global lang="scss">
+  :root {
+    --clr-primary: #653390;
+    --clr-secondary: #70966e;
+  }
+
+  body {
+    font-family: "Lato", Arial, sans-serif;
+  }
+
+  .ly-hero {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 80dvh;
+    display: flex;
+
+    isolation: isolate;
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background-image: linear-gradient(
+          75deg,
+          rgba(101, 51, 144, 0.4) 30%,
+          rgba(101, 51, 144, 0.4) 63%
+        ),
+        url("/images/choice-5.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-color: rgba(blue, 0.5);
+      // background: ;
+      // background: rgb(40,20,58);
+      // background: ;
+    }
+
+    &__inner {
+      margin: 0 auto;
+      // border: 1px solid red;
+
+      width: 80%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      align-self: start;
+      margin-bottom: 2rem;
+
+      font-size: 4.5rem;
+      font-weight: 600;
+      line-height: 1em;
+
+      // background: rgb(116, 71, 155);
+      // background: rgb(101, 51, 144);
+      // background: linear-gradient(
+      //   120deg,
+      //   rgba(101, 51, 144, 1) 0%,
+      //   rgba(112, 150, 110, 1) 25%
+      // );
+      // background: #fff;
+      // background: linear-gradient(
+      //   130deg,
+      //   rgba(255 255 255 / 1) 65%,
+      //   rgba(15, 179, 0) 85%
+      // );
+
+      // -webkit-background-clip: text;
+      // background-clip: text;
+      // -webkit-text-fill-color: transparent;
+
+      color: white;
+
+      .tag {
+        color: rgb(144, 252, 134);
+      }
+    }
+
+    a {
+      background-color: var(--clr-primary);
+      color: white;
+
+      align-self: flex-start;
+      font-size: 1.125rem;
+      padding: 0.5em 1.75em;
+      border-radius: 0.25em;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+  .cat-sliders {
+    h3 {
+      color: red;
+    }
+  }
 </style>
+
+<script is:inline>
+const catSlider = document.querySelector("[data-catslider]");
+</script>
