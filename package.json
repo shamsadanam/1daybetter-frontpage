@@ -13,6 +13,7 @@
     "astro": "^2.7.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.6.4",
+    "material-icons": "^1.13.8",
     "sass": "^1.63.6",
     "slick-carousel": "^1.8.1"
   }
