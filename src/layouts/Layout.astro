@@ -40,6 +40,36 @@ const { title } = Astro.props;
     $("[data-catslider]").slick({
       prevArrow: $(".ly-sliders .ly-slider-prev"),
       nextArrow: $(".ly-sliders .ly-slider-next"),
+      // the magic
+      slidesToScroll: 1,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 6,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 5000,
+          settings: {
+            slidesToShow: 7,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 300,
+          settings: "unslick", // destroys slick
+        },
+      ],
     });
   </script>
 </html>
