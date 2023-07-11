@@ -1,0 +1,221 @@
+<div class="row no-gutters">
+  <div class="col-12">
+    <div class="ly-hero">
+      <div class="overlay">&nbsp;</div>
+      <div class="ly-hero__inner">
+        <h1>
+          <span>Crowdcuring</span>
+          <br />
+          <span class="tag">Academy</span>
+        </h1>
+        <a href="/"> Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  .ly-sliders {
+    overflow: hidden;
+    padding-bottom: 3rem;
+    .row {
+      position: relative;
+      isolation: isolate;
+    }
+    .col-1 {
+      z-index: 9;
+      background-color: #fff;
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .col-10 {
+      z-index: 1;
+    }
+    .slick-arrow {
+      // position: absolute;
+      // inset: 0;
+      // top: 50%;
+      transform: translate(0, 50%);
+      // z-index: 99;
+      cursor: pointer;
+      .material-symbols-outlined {
+        font-size: 2rem;
+        color: var(--clr-primary);
+      }
+    }
+    .ly-slider-prev {
+      // left: 20px;
+      align-self: end;
+    }
+    .ly-slider-next {
+      // right: 20px;
+      align-selft: start;
+    }
+  }
+  .section-title {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+  .ly-iconbox-slider-container {
+    --_slide-gap: 0.5rem;
+    margin: 0 calc(-1 * var(--_slide-gap));
+
+    .slick-slider {
+      position: relative;
+    }
+    .slick-list {
+      overflow: visible;
+    }
+  }
+
+  .ly-iconbox {
+    min-height: 15rem;
+    // border: 1px solid red;
+    padding: 1rem 0.75rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(
+      180deg,
+      var(--clr-primary, 30%),
+      var(--clr-secondary, 50%)
+    );
+    color: #fff;
+    margin: 0 var(--_slide-gap);
+    // transition: transform 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &__img-wrapper {
+      height: 5rem;
+      margin-bottom: 2.5rem;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: 5rem;
+      }
+    }
+
+    .gap-2 {
+      gap: 0.25rem;
+    }
+
+    h4 {
+      font-size: 0.875rem;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1em;
+    }
+
+    p {
+      font-size: 0.75rem;
+      line-height: 1.2em;
+    }
+
+    svg {
+      fill: #fff;
+
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+</style>
+
+<style is:global lang="scss">
+  .ly-hero {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 80dvh;
+    display: flex;
+
+    isolation: isolate;
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background-image: linear-gradient(
+          75deg,
+          rgba(101, 51, 144, 0.4) 30%,
+          rgba(101, 51, 144, 0.4) 63%
+        ),
+        url("/images/choice-5.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-color: rgba(blue, 0.5);
+      // background: ;
+      // background: rgb(40,20,58);
+      // background: ;
+    }
+
+    &__inner {
+      margin: 0 auto;
+      // border: 1px solid red;
+
+      width: 80%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      align-self: start;
+      margin-bottom: 2rem;
+
+      font-size: 4.5rem;
+      font-weight: 600;
+      line-height: 1em;
+
+      // background: rgb(116, 71, 155);
+      // background: rgb(101, 51, 144);
+      // background: linear-gradient(
+      //   120deg,
+      //   rgba(101, 51, 144, 1) 0%,
+      //   rgba(112, 150, 110, 1) 25%
+      // );
+      // background: #fff;
+      // background: linear-gradient(
+      //   130deg,
+      //   rgba(255 255 255 / 1) 65%,
+      //   rgba(15, 179, 0) 85%
+      // );
+
+      // -webkit-background-clip: text;
+      // background-clip: text;
+      // -webkit-text-fill-color: transparent;
+
+      color: white;
+
+      .tag {
+        color: rgb(144, 252, 134);
+      }
+    }
+
+    a {
+      background-color: var(--clr-primary);
+      color: white;
+
+      align-self: flex-start;
+      font-size: 1.125rem;
+      padding: 0.5em 1.75em;
+      border-radius: 0.25em;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+  .cat-sliders {
+    h3 {
+      color: red;
+    }
+  }
+</style>

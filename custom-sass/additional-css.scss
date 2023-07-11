@@ -1,0 +1,13 @@
+@import "mixin";
+@import "home-page";
+@import "inner-page";
+
+.odb-container {
+  padding-left: calc(40px + 15px);
+  padding-right: calc(40px + 15px);
+
+  @include respondMax(1280px) {
+    padding-left: calc(20px + 10px);
+    padding-right: calc(20px + 10px);
+  }
+}

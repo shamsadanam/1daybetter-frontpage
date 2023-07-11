@@ -1,0 +1,15 @@
+.main-content-col {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.odb-hero {
+  h2 {
+    font-size: clamp(2rem, 1.4000rem + 3.0000vw, 5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 1.0000rem + 1.2500vw, 2.5rem);
+  }
+}

@@ -1,129 +1,162 @@
 ---
-import CatSlider from "../components/CatSlider.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="row no-gutters">
+  <div class="space">&nbsp;</div>
+  <div class="row odb-inner-page obd-bg-grad obd-bg-grad--security">
     <div class="col-12">
-      <div class="ly-hero">
-        <div class="overlay">&nbsp;</div>
-        <div class="ly-hero__inner">
-          <h1>
-            <span>Crowdcuring</span>
-            <br />
-            <span class="tag">Academy</span>
-          </h1>
-          <a href="/"> Sign Up</a>
-        </div>
-      </div>
+      <h1>Coming Soon</h1>
+      <h2>Security</h2>
+      <p>
+        Crowdcuring will be the safest, most secure health application on the
+        web. We are currently working behind the scenes to empower our users by
+        providing access to tremendously powerful data that will help you find
+        the Correct Regimen at the Correct time. This data comes from trusting
+        Crowdcuring with your personal information. Crowdcuring will
+        continuously work to earn your trust as we share with you a
+        revolutionary technology that returns your data to you for control.
+      </p>
+      <p>
+        Finding the right regimen at the right time will be the catalyst
+        influencing change faster and faster - as healing just becomes easier.
+        The price to healing faster shouldn't be manipulation of all of your
+        personal data.
+      </p>
+      <p>
+        Crowdcuring provides its users with the transparency they deserve. We
+        should all be in control of our own personal data. It's a Data
+        Revolution!!!!
+      </p>
     </div>
   </div>
-  <CatSlider />
 </Layout>
 
-<style is:global lang="scss">
-  :root {
-    --clr-primary: #653390;
-    --clr-secondary: #70966e;
+<style lang="scss">
+  @import "../sass/mixin";
+
+  .odb-inner-page {
+    color: white;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    h1 {
+      padding-top: 1.5rem;
+      font-size: clamp(1.5rem, 1.2692rem + 1.0256vw, 2.5rem);
+      font-weight: 500;
+      color: white;
+    }
+    h2 {
+      font-size: clamp(1.25rem, 1.0625rem + 0.8333vw, 1.5rem);
+      font-weight: 500;
+      color: white;
+    }
+    p {
+      padding-bottom: 1.5rem;
+      font-size: clamp(0.875rem, 0.6875rem + 0.8333vw, 1.125rem);
+      line-height: 1.8;
+      color: white;
+    }
+    // > [class^="col-md-4"] {
+    //   padding-right: 0;
+    // }
   }
 
-  body {
-    font-family: "Lato", Arial, sans-serif;
-  }
+  .obd-bg-grad {
+    --_left-img-width: 25%;
 
-  .ly-hero {
     position: relative;
     isolation: isolate;
 
-    min-height: 80dvh;
-    display: flex;
+    [class^="col"] {
+      position: relative;
+      z-index: 3;
 
-    isolation: isolate;
+      // match-with: .main-content-col
+      padding-left: 40px;
+      padding-right: 40px;
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-
-      background-image: linear-gradient(
-          75deg,
-          rgba(101, 51, 144, 0.4) 30%,
-          rgba(101, 51, 144, 0.4) 63%
-        ),
-        url("/images/choice-5.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      // background-color: rgba(blue, 0.5);
-      // background: ;
-      // background: rgb(40,20,58);
-      // background: ;
-    }
-
-    &__inner {
-      margin: 0 auto;
-      // border: 1px solid red;
-
-      width: 80%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    h1 {
-      align-self: start;
-      margin-bottom: 2rem;
-
-      font-size: 4.5rem;
-      font-weight: 600;
-      line-height: 1em;
-
-      // background: rgb(116, 71, 155);
-      // background: rgb(101, 51, 144);
-      // background: linear-gradient(
-      //   120deg,
-      //   rgba(101, 51, 144, 1) 0%,
-      //   rgba(112, 150, 110, 1) 25%
-      // );
-      // background: #fff;
-      // background: linear-gradient(
-      //   130deg,
-      //   rgba(255 255 255 / 1) 65%,
-      //   rgba(15, 179, 0) 85%
-      // );
-
-      // -webkit-background-clip: text;
-      // background-clip: text;
-      // -webkit-text-fill-color: transparent;
-
-      color: white;
-
-      .tag {
-        color: rgb(144, 252, 134);
+      @include respondMax(1280px) {
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
 
-    a {
-      background-color: var(--clr-primary);
-      color: white;
+    p {
+      max-width: calc(100% - var(--_left-img-width) - 5%);
 
-      align-self: flex-start;
-      font-size: 1.125rem;
-      padding: 0.5em 1.75em;
-      border-radius: 0.25em;
-      text-decoration: none;
-      font-weight: 500;
+      @include respondMax(575px) {
+        max-width: 100%;
+        margin-bottom: 100px;
+      }
     }
-  }
-  .cat-sliders {
-    h3 {
-      color: red;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(82, 35, 122, 0.85);
+      background: linear-gradient(
+        90deg,
+        rgba(82, 35, 122, 1) 75%,
+        rgba(255, 255, 255, 0) 90%
+      );
+
+      z-index: 2;
+
+      @include respondMax(575px) {
+        background: linear-gradient(
+          180deg,
+          rgba(82, 35, 122, 1) 87.5%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: calc(var(--_left-img-width) + 5%);
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      @include respondMax(575px) {
+        top: unset;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100px;
+      }
+    }
+
+    &--security {
+      &:after {
+        // background-image: url("/images/security.jpg");
+        background-image: url("/wp-content/uploads/2023/07/security.jpg");
+      }
+    }
+    &--voting {
+      &:after {
+        // background-image: url("/images/security.jpg");
+        background-image: url("/wp-content/uploads/2023/07/voting.jpg");
+      }
+    }
+    &--teleconference {
+      &:after {
+        // background-image: url("/images/security.jpg");
+        background-image: url("/wp-content/uploads/2023/07/teleconference.jpg");
+      }
+    }
+    &--wallet {
+      &:after {
+        // background-image: url("/images/security.jpg");
+        background-image: url("/wp-content/uploads/2023/07/wallet.jpg");
+      }
     }
   }
 </style>
-
-<script is:inline>
-const catSlider = document.querySelector("[data-catslider]");
-</script>

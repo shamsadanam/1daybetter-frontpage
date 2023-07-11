@@ -1,0 +1,127 @@
+.odb-inner-page {
+  color: white;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+
+  h1 {
+    padding-top: 1.5rem;
+    font-size: clamp(1.5rem, 1.2692rem + 1.0256vw, 2.5rem);
+    font-weight: 500;
+    color: white;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 1.0625rem + 0.8333vw, 1.5rem);
+    font-weight: 500;
+    color: white;
+  }
+
+  p {
+    padding-bottom: 1.5rem;
+    font-size: clamp(0.875rem, 0.6875rem + 0.8333vw, 1.125rem);
+    line-height: 1.8;
+    color: white;
+  }
+
+  // > [class^="col-md-4"] {
+  //   padding-right: 0;
+  // }
+}
+
+.obd-bg-grad {
+  --_left-img-width: 25%;
+
+  position: relative;
+  isolation: isolate;
+
+  [class^="col"] {
+    position: relative;
+    z-index: 3;
+
+    // match-with: .main-content-col
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include respondMax(1280px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  p {
+    max-width: calc(100% - var(--_left-img-width) - 5%);
+
+    @include respondMax(575px) {
+      max-width: 100%;
+      margin-bottom: 100px;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(82, 35, 122, 0.85);
+    background: linear-gradient(90deg,
+        rgba(82, 35, 122, 1) 75%,
+        rgba(255, 255, 255, 0) 90%);
+
+    z-index: 2;
+
+    @include respondMax(575px) {
+      background: linear-gradient(180deg,
+          rgba(82, 35, 122, 1) 87.5%,
+          rgba(255, 255, 255, 0) 100%);
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(var(--_left-img-width) + 5%);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    @include respondMax(575px) {
+      top: unset;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+    }
+  }
+
+  &--security {
+    &:after {
+      // background-image: url("/images/security.jpg");
+      background-image: url("/wp-content/uploads/2023/07/security.jpg");
+    }
+  }
+
+  &--voting {
+    &:after {
+      // background-image: url("/images/security.jpg");
+      background-image: url("/wp-content/uploads/2023/07/voting.jpg");
+    }
+  }
+
+  &--teleconference {
+    &:after {
+      // background-image: url("/images/security.jpg");
+      background-image: url("/wp-content/uploads/2023/07/teleconference.jpg");
+    }
+  }
+
+  &--wallet {
+    &:after {
+      // background-image: url("/images/security.jpg");
+      background-image: url("/wp-content/uploads/2023/07/wallet.jpg");
+    }
+  }
+}

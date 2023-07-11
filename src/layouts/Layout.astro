@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
@@ -31,7 +31,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
   </body>
   <script>
     import $ from "jquery";
@@ -76,8 +78,23 @@ const { title } = Astro.props;
 <style is:global>
   @import "bootstrap";
   @import "slick-carousel/slick/slick";
+
+  :root {
+    --clr-primary: #653390;
+    --clr-secondary: #70966e;
+  }
+
   body {
     padding-bottom: 20rem;
+    font-family: "Lato", Arial, sans-serif;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .space {
+    height: 150px;
   }
 
   .material-symbols-rounded {
