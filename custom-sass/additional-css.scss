@@ -11,3 +11,64 @@
     padding-right: calc(20px + 10px);
   }
 }
+
+// .popup
+#sgpb-popup-dialog-main-div {
+  --_w: 480px !important;
+  --_h: 270px !important;
+
+  min-width: unset !important;
+  min-height: unset !important;
+  max-width: unset !important;
+  max-height: unset !important;
+
+  width: 640px !important;
+  height: 360px !important;
+
+
+
+  @include respondMax(767px) {
+    width: 480px !important;
+    height: 270px !important;
+  }
+
+        @include respondMax(575px) {
+          width: 320px !important;
+          height: 180px !important;
+        }
+
+  .sgpb-main-html-content-wrapper {
+    width: 640px !important;
+    height: 360px !important;
+    overflow: hidden;
+
+
+
+    @include respondMax(767px) {
+      width: 480px !important;
+      height: 270px !important;
+    }
+
+                @include respondMax(575px) {
+                  width: 320px !important;
+                  height: 180px !important;
+                }
+  }
+
+  iframe {
+    width: 640px !important;
+    height: 360px !important;
+
+
+
+    @include respondMax(767px) {
+      width: 480px !important;
+      height: 270px !important;
+    }
+
+                @include respondMax(575px) {
+                  width: 320px !important;
+                  height: 180px !important;
+                }
+  }
+}
